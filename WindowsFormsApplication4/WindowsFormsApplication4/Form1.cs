@@ -30,7 +30,7 @@ namespace WindowsFormsApplication4
 
         public void connect1()
         {
-            string oradb ="Data Source=localhost;Persist Security Info=True;User ID=system;Password=1234;Unicode=True";
+            string oradb = "Data Source=xe;Persist Security Info=True;User ID=system;Password=1234";
             conn = new OracleConnection(oradb); // C#
             conn.Open();
         }
