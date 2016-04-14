@@ -35,14 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.admin_id = new System.Windows.Forms.TextBox();
+            this.admin_pass = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.user_id = new System.Windows.Forms.TextBox();
+            this.user_pass = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // admin
@@ -107,10 +107,11 @@
             this.label2.ForeColor = System.Drawing.Color.Green;
             this.label2.Location = new System.Drawing.Point(108, 278);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 18);
+            this.label2.Size = new System.Drawing.Size(67, 18);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Username:";
+            this.label2.Text = "User id:";
             this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -124,26 +125,26 @@
             this.label3.Text = "Password:";
             this.label3.Visible = false;
             // 
-            // textBox1
+            // admin_id
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 276);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Visible = false;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
+            this.admin_id.Location = new System.Drawing.Point(231, 276);
+            this.admin_id.Name = "admin_id";
+            this.admin_id.Size = new System.Drawing.Size(180, 20);
+            this.admin_id.TabIndex = 6;
+            this.admin_id.Visible = false;
+            this.admin_id.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.admin_id.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
             // 
-            // textBox2
+            // admin_pass
             // 
-            this.textBox2.Location = new System.Drawing.Point(231, 349);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Visible = false;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.MouseHover += new System.EventHandler(this.textBox2_MouseHover);
+            this.admin_pass.Location = new System.Drawing.Point(231, 349);
+            this.admin_pass.Name = "admin_pass";
+            this.admin_pass.PasswordChar = '*';
+            this.admin_pass.Size = new System.Drawing.Size(180, 20);
+            this.admin_pass.TabIndex = 7;
+            this.admin_pass.Visible = false;
+            this.admin_pass.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.admin_pass.MouseHover += new System.EventHandler(this.textBox2_MouseHover);
             // 
             // label4
             // 
@@ -153,9 +154,9 @@
             this.label4.ForeColor = System.Drawing.Color.Blue;
             this.label4.Location = new System.Drawing.Point(600, 278);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 18);
+            this.label4.Size = new System.Drawing.Size(67, 18);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Username:";
+            this.label4.Text = "User id:";
             this.label4.Visible = false;
             // 
             // label5
@@ -170,23 +171,24 @@
             this.label5.Text = "Password:";
             this.label5.Visible = false;
             // 
-            // textBox3
+            // user_id
             // 
-            this.textBox3.Location = new System.Drawing.Point(720, 276);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.Visible = false;
+            this.user_id.Location = new System.Drawing.Point(720, 276);
+            this.user_id.Name = "user_id";
+            this.user_id.Size = new System.Drawing.Size(180, 20);
+            this.user_id.TabIndex = 10;
+            this.user_id.Visible = false;
+            this.user_id.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // user_pass
             // 
-            this.textBox4.Location = new System.Drawing.Point(720, 349);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(180, 20);
-            this.textBox4.TabIndex = 11;
-            this.textBox4.Visible = false;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.user_pass.Location = new System.Drawing.Point(720, 349);
+            this.user_pass.Name = "user_pass";
+            this.user_pass.PasswordChar = '*';
+            this.user_pass.Size = new System.Drawing.Size(180, 20);
+            this.user_pass.TabIndex = 11;
+            this.user_pass.Visible = false;
+            this.user_pass.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label6
             // 
@@ -200,17 +202,17 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "User";
             // 
-            // button1
+            // login
             // 
-            this.button1.BackColor = System.Drawing.Color.Sienna;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(461, 452);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.login.BackColor = System.Drawing.Color.Sienna;
+            this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login.Location = new System.Drawing.Point(453, 451);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(75, 23);
+            this.login.TabIndex = 13;
+            this.login.Text = "Login";
+            this.login.UseVisualStyleBackColor = false;
+            this.login.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -218,14 +220,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(942, 584);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.login);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.user_pass);
+            this.Controls.Add(this.user_id);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.admin_pass);
+            this.Controls.Add(this.admin_id);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -247,14 +249,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox admin_id;
+        private System.Windows.Forms.TextBox admin_pass;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox user_id;
+        private System.Windows.Forms.TextBox user_pass;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button login;
     }
 }
 

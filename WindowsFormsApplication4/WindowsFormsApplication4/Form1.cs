@@ -23,9 +23,6 @@ namespace WindowsFormsApplication4
         DataSet ds;
         DataTable dt;
         DataRow dr;
-        string passwordadmin="";
-        string passwordadmins = "";
-        string usernameuser = "";
         public Form1()
         {
             InitializeComponent();
@@ -33,7 +30,7 @@ namespace WindowsFormsApplication4
 
         public void connect1()
         {
-            string oradb = "Data Source=localhost;User ID=system;Password=1234";
+            string oradb ="Data Source=localhost;Persist Security Info=True;User ID=system;Password=1234;Unicode=True";
             conn = new OracleConnection(oradb); // C#
             conn.Open();
         }
@@ -53,9 +50,6 @@ namespace WindowsFormsApplication4
 
         private void Register_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 frm = new Form2();
-            frm.Show();
 
         }
 
@@ -75,16 +69,16 @@ namespace WindowsFormsApplication4
             label1.Visible = false;
             label2.Visible = true;
             label3.Visible = true;
-            textBox1.Visible = true;
-            textBox2.Visible = true;
+            admin_id.Visible = true;
+            admin_pass.Visible = true;
 
 
             user.BackColor = Color.Blue;
             label6.Visible = true;
             label4.Visible = false;
             label5.Visible = false;
-            textBox3.Visible = false;
-            textBox4.Visible = false;
+            user_id.Visible = false;
+            user_pass.Visible = false;
         }
 
         private void admin_MouseLeave(object sender, EventArgs e)
@@ -110,83 +104,68 @@ namespace WindowsFormsApplication4
             label6.Visible = false;
             label4.Visible = true;
             label5.Visible = true;
-            textBox3.Visible = true;
-            textBox4.Visible = true;
+            user_id.Visible = true;
+            user_pass.Visible = true;
 
             admin.BackColor = Color.Green;
             label1.Visible = true;
             label2.Visible = false;
             label3.Visible = false;
-            textBox1.Visible = false;
-            textBox2.Visible = false;
+            admin_id.Visible = false;
+            admin_pass.Visible = false;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            passwordadmin = textBox2.Text;
-
-
-
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            usernameuser = textBox1.Text;
 
         }
 
         private void button1_Click_1(object sender, EventArgs e)
-        {
+        {   
             connect1();
             comm = new OracleCommand();
-            comm.CommandText = "select * from user_ where u_id ='"+usernameuser+"' and password ='"+passwordadmin+"'";
+            if (this.user_id.Text.Equals(""))  // do for admin
+            {
+                comm.CommandText = "select password from admin_ where admin_id ='"+admin_id+"' and password='"+admin_pass.Text+"';";
+            }
+            else
+            {
+                comm.CommandText="select password from user_ where u_id ='"+user_id.Text+"' and password='"+user_pass.Text+"';";
+            }
+            //comm.CommandText = "select * from user_ where u_id ='"+usernameuser+"' and password ='"+passwordadmin+"'";
             comm.CommandType = CommandType.Text;
             ds = new DataSet();
             da = new OracleDataAdapter(comm.CommandText, conn);
             da.Fill(ds, "user_");
-            dt=ds.Tables["user_"];
+            dt = ds.Tables["user_"];
             int t = dt.Rows.Count;
-            
-
-
-
-
-
-
-
-            if(t!=0)
+            if (t == 0)
             {
-                this.Hide();
-                Form3 frm = new Form3();
-                frm.Show();
+                MessageBox.Show("Invalid id and password combo");
             }
-            else 
-            MessageBox.Show("Invalid UserID and Password");
-            conn.Close();
-
-            if (usernameuser == "" || passwordadmin == "")
+            else
             {
-                MessageBox.Show("Empty Fields Detected ! Please fill up all the fields");
-                return;
+                Form2 f = new Form2();
+                f.Show();
             }
-
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
+        }
 
-            if (passwordadmins == passwordadmin)
-            {
-                this.Hide();
-                Form3 frm = new Form3();
-                frm.Show();
-            }
-            else
-                MessageBox.Show("Invalid UserID and Password");
-
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-        
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
