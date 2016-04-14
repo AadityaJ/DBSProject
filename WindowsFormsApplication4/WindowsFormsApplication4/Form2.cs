@@ -36,7 +36,7 @@ namespace WindowsFormsApplication4
         }
         public void connect1()
         {
-            string oradb = "Data Source=ictorcl;User ID=it306;Password=student";
+            string oradb = "Data Source=localhost;User ID=system;Password=1234";
             conn = new OracleConnection(oradb); // C#
             conn.Open();
         }

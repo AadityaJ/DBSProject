@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("InterNetMang")]
+[assembly: AssemblyTitle("WindowsFormsApplication4")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("InterNetMang")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("WindowsFormsApplication4")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4b576a74-decc-4d8f-97cc-73a2409ce626")]
+[assembly: Guid("6da1f623-3530-4306-a30b-e970c7133401")]
 
 // Version information for an assembly consists of the following four values:
 //
