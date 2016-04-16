@@ -77,5 +77,10 @@ namespace InterNetMang
         {
 
         }
+
+        private void age_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

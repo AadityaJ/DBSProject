@@ -195,6 +195,7 @@
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(112, 20);
             this.age.TabIndex = 23;
+            this.age.TextChanged += new System.EventHandler(this.age_TextChanged);
             // 
             // Fillform
             // 

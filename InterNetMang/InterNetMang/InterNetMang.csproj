@@ -73,6 +73,12 @@
     <Compile Include="Renew.Designer.cs">
       <DependentUpon>Renew.cs</DependentUpon>
     </Compile>
+    <Compile Include="user_prev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_prev.Designer.cs">
+      <DependentUpon>user_prev.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Fillform.resx">
       <DependentUpon>Fillform.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +97,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Renew.resx">
+      <DependentUpon>Renew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_prev.resx">
+      <DependentUpon>user_prev.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

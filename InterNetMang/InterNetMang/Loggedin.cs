@@ -58,6 +58,7 @@ namespace InterNetMang
         {
             Renew rn = new Renew();
             rn.Show();
+            rn.u_id_r = this.u_id;
         }
         private int getSessionId()
         {
@@ -105,6 +106,13 @@ namespace InterNetMang
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            user_prev up = new user_prev();
+            up.u_id_up = this.u_id;
+            up.Show();
         }
     }
 }
