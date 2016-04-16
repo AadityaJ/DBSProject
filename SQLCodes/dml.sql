@@ -16,3 +16,7 @@ create table renew_ (renew_id varchar(15),u_id varchar(15),admin_id varchar(15),
 create table interleaved_ (renew_id varchar(15),u_id varchar(15),amount int,primary key(renew_id));
 
 /* basic dml done*/
+create table last_(id varchar(15),table_name varchar(15));
+/*last_ is  neeeded on user_, admin_,user_session_,renew_ and inertleaved_*/
+alter table user_session_ modify login varchar2(20);
+alter table user_session_ modify logout varchar2(20);

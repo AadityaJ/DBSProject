@@ -70,7 +70,17 @@ namespace InterNetMang
             else
             {
                 // new form
+                Loggedin lg = new Loggedin();
+                lg.Show();
+                lg.u_id=user_id.Text;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Fillform f = new Fillform();
+//            this.SetVisibleCore(false);
+            f.Show();
         }
     }
 }
