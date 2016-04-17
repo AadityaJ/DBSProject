@@ -35,22 +35,7 @@ namespace InterNetMang
         }
         private void strt_Click(object sender, EventArgs e)
         {
-            dtm = DateTime.Now;
-            connect1();
-            comm = new OracleCommand();
-            comm.CommandText = "select * from user_ where u_id='" + u_id+ "'";
-            comm.CommandType = CommandType.Text;
-            ds = new DataSet();
-            da = new OracleDataAdapter(comm.CommandText, conn);
-            da.Fill(ds, "user_");
-            dt = ds.Tables["user_"];
-            dr = dt.Rows[0];
-            this.nm.Text = dr["name"].ToString();
-            this.id.Text = dr["u_id"].ToString();
-            this.dob.Text = dr["dob"].ToString();
-            this.age.Text = dr["age"].ToString();
-            this.phno.Text = dr["ph_no"].ToString();
-            conn.Close();
+            
 
         }
 
@@ -111,8 +96,41 @@ namespace InterNetMang
         private void button1_Click(object sender, EventArgs e)
         {
             user_prev up = new user_prev();
+            MessageBox.Show(u_id);
+            MessageBox.Show(u_id);
             up.u_id_up = this.u_id;
             up.Show();
+        }
+
+
+        private void prev_Click_1(object sender, EventArgs e)
+        {
+            //user_prev up = new user_prev();
+            MessageBox.Show("aaaaaaaaaaaaaaa");
+            MessageBox.Show(u_id);
+            user_prev up = new user_prev();
+            up.u_id_up = u_id;
+            up.Show();
+        }
+
+        private void start_Click(object sender, EventArgs e)
+        {
+            dtm = DateTime.Now;
+            connect1();
+            comm = new OracleCommand();
+            comm.CommandText = "select * from user_ where u_id='" + u_id + "'";
+            comm.CommandType = CommandType.Text;
+            ds = new DataSet();
+            da = new OracleDataAdapter(comm.CommandText, conn);
+            da.Fill(ds, "user_");
+            dt = ds.Tables["user_"];
+            dr = dt.Rows[0];
+            this.nm.Text = dr["name"].ToString();
+            this.id.Text = dr["u_id"].ToString();
+            this.dob.Text = dr["dob"].ToString();
+            this.age.Text = dr["age"].ToString();
+            this.phno.Text = dr["ph_no"].ToString();
+            conn.Close();
         }
     }
 }

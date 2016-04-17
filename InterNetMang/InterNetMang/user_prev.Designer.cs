@@ -30,6 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
+            this.emp_tab = new System.Windows.Forms.DataGridView();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Logout = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_us = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.emp_tab)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,16 +54,55 @@
             this.id.Size = new System.Drawing.Size(100, 20);
             this.id.TabIndex = 1;
             // 
+            // emp_tab
+            // 
+            this.emp_tab.AllowUserToAddRows = false;
+            this.emp_tab.AllowUserToDeleteRows = false;
+            this.emp_tab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.emp_tab.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Login,
+            this.Logout,
+            this.Data_us});
+            this.emp_tab.Location = new System.Drawing.Point(165, 122);
+            this.emp_tab.Name = "emp_tab";
+            this.emp_tab.ReadOnly = true;
+            this.emp_tab.Size = new System.Drawing.Size(344, 150);
+            this.emp_tab.TabIndex = 2;
+            this.emp_tab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.emp_tab_CellContentClick);
+            // 
+            // Login
+            // 
+            this.Login.Frozen = true;
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            // 
+            // Logout
+            // 
+            this.Logout.Frozen = true;
+            this.Logout.HeaderText = "Logout";
+            this.Logout.Name = "Logout";
+            this.Logout.ReadOnly = true;
+            // 
+            // Data_us
+            // 
+            this.Data_us.Frozen = true;
+            this.Data_us.HeaderText = "Data Used";
+            this.Data_us.Name = "Data_us";
+            this.Data_us.ReadOnly = true;
+            // 
             // user_prev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 381);
+            this.Controls.Add(this.emp_tab);
             this.Controls.Add(this.id);
             this.Controls.Add(this.label1);
             this.Name = "user_prev";
             this.Text = "user_prev";
             this.Load += new System.EventHandler(this.user_prev_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.emp_tab)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,5 +112,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox id;
+        private System.Windows.Forms.DataGridView emp_tab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Logout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_us;
     }
 }

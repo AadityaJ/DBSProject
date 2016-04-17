@@ -22,13 +22,12 @@ namespace InterNetMang
         DataSet ds;
         DataTable dt;
         DataRow dr;
-        DateTime dtm;
-        DateTime dtm2;
         public user_prev()
         {
             InitializeComponent();
+            //;pid.ReadOnly = true;
             id.Text = u_id_up;
-            id.ReadOnly = true;
+            filltable();
         }
         public void connect1()
         {
@@ -36,13 +35,40 @@ namespace InterNetMang
             conn = new OracleConnection(oradb); // C#
             conn.Open();
         }
+        private void filltable()
+        {
+            //this.emp_tab.Rows.Insert(0,"her", "lkdhnf", "ljhskdj");
+            int i = 0;
+            connect1();
+            comm = new OracleCommand();
+            MessageBox.Show(u_id_up);
+            comm.CommandText = "select Login,Logout,Data_used from user_session_ where u_id='"+u_id_up+"'";
+            comm.CommandType = CommandType.Text;
+            ds = new DataSet();
+            da = new OracleDataAdapter(comm.CommandText, conn);
+            da.Fill(ds, "user_session_");
+            dt = ds.Tables["user_session_"];
+            dr = dt.Rows[i];
+            int t = dt.Rows.Count;
+            for(i=0;i< t; i++)
+            {
+                dr = dt.Rows[i];
+                this.emp_tab.Rows.Insert(i, dr["Login"].ToString(),dr["Logout"].ToString(),dr["Data_used"].ToString());
 
+            }
+           // conn.Close();
+        }
         private void user_prev_Load(object sender, EventArgs e)
         {
 
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void emp_tab_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

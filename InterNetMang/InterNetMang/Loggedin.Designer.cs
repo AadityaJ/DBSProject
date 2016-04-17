@@ -36,13 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.nm = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.TextBox();
             this.dob = new System.Windows.Forms.TextBox();
             this.age = new System.Windows.Forms.TextBox();
             this.phno = new System.Windows.Forms.TextBox();
+            this.prev = new System.Windows.Forms.Button();
+            this.start = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // strt
@@ -123,16 +124,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Age";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(246, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Show Previous Transactions";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -178,18 +169,39 @@
             this.phno.TabIndex = 14;
             this.phno.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
+            // prev
+            // 
+            this.prev.Location = new System.Drawing.Point(328, 30);
+            this.prev.Name = "prev";
+            this.prev.Size = new System.Drawing.Size(75, 23);
+            this.prev.TabIndex = 15;
+            this.prev.Text = "Show Previous";
+            this.prev.UseVisualStyleBackColor = true;
+            this.prev.Click += new System.EventHandler(this.prev_Click_1);
+            // 
+            // start
+            // 
+            this.start.Location = new System.Drawing.Point(87, 30);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(75, 23);
+            this.start.TabIndex = 16;
+            this.start.Text = "Start";
+            this.start.UseVisualStyleBackColor = true;
+            this.start.Click += new System.EventHandler(this.start_Click);
+            // 
             // Loggedin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 468);
+            this.Controls.Add(this.start);
+            this.Controls.Add(this.prev);
             this.Controls.Add(this.phno);
             this.Controls.Add(this.age);
             this.Controls.Add(this.dob);
             this.Controls.Add(this.id);
             this.Controls.Add(this.nm);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -197,7 +209,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logout);
             this.Controls.Add(this.rnw);
-            this.Controls.Add(this.strt);
             this.Text = "Loggedin";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -214,12 +225,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox nm;
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.TextBox dob;
         private System.Windows.Forms.TextBox age;
         private System.Windows.Forms.TextBox phno;
+        private System.Windows.Forms.Button prev;
+        private System.Windows.Forms.Button start;
     }
 }
