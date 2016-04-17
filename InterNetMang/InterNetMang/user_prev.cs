@@ -15,7 +15,7 @@ namespace InterNetMang
 {
     public partial class user_prev : Form
     {
-        public String u_id_up;
+        public String hate;
         OracleConnection conn;
         OracleCommand comm;
         OracleDataAdapter da;
@@ -25,9 +25,6 @@ namespace InterNetMang
         public user_prev()
         {
             InitializeComponent();
-            //;pid.ReadOnly = true;
-            id.Text = u_id_up;
-            filltable();
         }
         public void connect1()
         {
@@ -41,8 +38,8 @@ namespace InterNetMang
             int i = 0;
             connect1();
             comm = new OracleCommand();
-            MessageBox.Show(u_id_up);
-            comm.CommandText = "select Login,Logout,Data_used from user_session_ where u_id='"+u_id_up+"'";
+           // MessageBox.Show(hate);
+            comm.CommandText = "select Login,Logout,Data_used from user_session_ where u_id='"+hate+"'";
             comm.CommandType = CommandType.Text;
             ds = new DataSet();
             da = new OracleDataAdapter(comm.CommandText, conn);
@@ -71,6 +68,13 @@ namespace InterNetMang
         private void emp_tab_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void start_Click(object sender, EventArgs e)
+        {
+            filltable();
+            id.Text = hate;
+            this.id.ReadOnly = true;
         }
     }
 }

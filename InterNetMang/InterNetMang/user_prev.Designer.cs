@@ -34,6 +34,7 @@
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Logout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_us = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.emp_tab)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,11 +92,22 @@
             this.Data_us.Name = "Data_us";
             this.Data_us.ReadOnly = true;
             // 
+            // start
+            // 
+            this.start.Location = new System.Drawing.Point(346, 26);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(75, 23);
+            this.start.TabIndex = 3;
+            this.start.Text = "Start";
+            this.start.UseVisualStyleBackColor = true;
+            this.start.Click += new System.EventHandler(this.start_Click);
+            // 
             // user_prev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 381);
+            this.Controls.Add(this.start);
             this.Controls.Add(this.emp_tab);
             this.Controls.Add(this.id);
             this.Controls.Add(this.label1);
@@ -116,5 +128,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
         private System.Windows.Forms.DataGridViewTextBoxColumn Logout;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_us;
+        private System.Windows.Forms.Button start;
     }
 }

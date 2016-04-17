@@ -98,7 +98,7 @@ namespace InterNetMang
             user_prev up = new user_prev();
             MessageBox.Show(u_id);
             MessageBox.Show(u_id);
-            up.u_id_up = this.u_id;
+            up.hate = this.u_id;
             up.Show();
         }
 
@@ -106,10 +106,9 @@ namespace InterNetMang
         private void prev_Click_1(object sender, EventArgs e)
         {
             //user_prev up = new user_prev();
-            MessageBox.Show("aaaaaaaaaaaaaaa");
-            MessageBox.Show(u_id);
+           // MessageBox.Show(u_id);
             user_prev up = new user_prev();
-            up.u_id_up = u_id;
+            up.hate = u_id;
             up.Show();
         }
 
