@@ -10,10 +10,9 @@ using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 
-
 namespace InterNetMang
 {
-    public partial class user_prev : Form
+    public partial class CompleteSession : Form
     {
         public String hate;
         OracleConnection conn;
@@ -22,7 +21,7 @@ namespace InterNetMang
         DataSet ds;
         DataTable dt;
         DataRow dr;
-        public user_prev()
+        public CompleteSession()
         {
             InitializeComponent();
         }
@@ -32,14 +31,13 @@ namespace InterNetMang
             conn = new OracleConnection(oradb); // C#
             conn.Open();
         }
-        private void filltable()
+        private void start_Click(object sender, EventArgs e)
         {
-            //this.emp_tab.Rows.Insert(0,"her", "lkdhnf", "ljhskdj");
             int i = 0;
             connect1();
             comm = new OracleCommand();
-           // MessageBox.Show(hate);
-            comm.CommandText = "select Login,Logout,Data_used from user_session_ where u_id='"+hate+"'";
+            // MessageBox.Show(hate);
+            comm.CommandText = "select * from user_session_";
             comm.CommandType = CommandType.Text;
             ds = new DataSet();
             da = new OracleDataAdapter(comm.CommandText, conn);
@@ -47,34 +45,17 @@ namespace InterNetMang
             dt = ds.Tables["user_session_"];
             dr = dt.Rows[i];
             int t = dt.Rows.Count;
-            for(i=0;i< t; i++)
+            for (i = 0; i < t; i++)
             {
                 dr = dt.Rows[i];
-                this.emp_tab.Rows.Insert(i, dr["Login"].ToString(),dr["Logout"].ToString(),dr["Data_used"].ToString());
+                this.tot_table.Rows.Insert(i, dr["session_id"].ToString(), dr["u_id"].ToString(), dr["Login"].ToString(), dr["Logout"].ToString(), dr["Data_used"].ToString());
 
             }
             conn.Close();
         }
-        private void user_prev_Load(object sender, EventArgs e)
+
+        private void id_strt_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void emp_tab_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void start_Click(object sender, EventArgs e)
-        {
-            filltable();
-            id.Text = hate;
-            this.id.ReadOnly = true;
         }
     }
 }

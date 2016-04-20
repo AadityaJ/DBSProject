@@ -53,6 +53,24 @@
     <Compile Include="admin_form.Designer.cs">
       <DependentUpon>admin_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Renew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Renew.Designer.cs">
+      <DependentUpon>Admin_Renew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ban.Designer.cs">
+      <DependentUpon>Ban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompleteSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompleteSession.Designer.cs">
+      <DependentUpon>CompleteSession.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fillform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +105,15 @@
     </Compile>
     <EmbeddedResource Include="admin_form.resx">
       <DependentUpon>admin_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Renew.resx">
+      <DependentUpon>Admin_Renew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ban.resx">
+      <DependentUpon>Ban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompleteSession.resx">
+      <DependentUpon>CompleteSession.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fillform.resx">
       <DependentUpon>Fillform.cs</DependentUpon>

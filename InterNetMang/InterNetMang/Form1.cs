@@ -35,7 +35,7 @@ namespace InterNetMang
         {
             connect1();
             comm = new OracleCommand();
-            comm.CommandText = "select * from admin_ where admin_id='" + this.admin_id.Text + "' and password='" + this.admin_pass.Text + "'";
+            comm.CommandText = "select * from admin_pass_ where admin_id='" + this.admin_id.Text + "' and password='" + this.admin_pass.Text + "'";
             comm.CommandType = CommandType.Text;
             ds = new DataSet();
             da = new OracleDataAdapter(comm.CommandText, conn);
@@ -60,8 +60,9 @@ namespace InterNetMang
         {
             connect1();
             comm = new OracleCommand();
-            comm.CommandText = "select * from user_ where u_id='" + user_id.Text + "' and password='" + user_pass.Text + "'";
+            comm.CommandText = "select * from user_ where u_id='" + user_id.Text + "' and password='" + user_pass.Text + "'";// and u_id not in (select u_id from banned_)";
             comm.CommandType = CommandType.Text;
+            //textBox1.Text= "select * from user_ where u_id='" + user_id.Text + "' and password='" + user_pass.Text + "' and u_id not in (select u_id from banned_)";
             ds = new DataSet();
             da = new OracleDataAdapter(comm.CommandText, conn);
             da.Fill(ds, "user_");

@@ -58,5 +58,25 @@ namespace InterNetMang
         {
 
         }
+
+        private void session_Click(object sender, EventArgs e)
+        {
+            CompleteSession cs = new CompleteSession();
+            cs.Show();
+        }
+
+        private void ban_users_Click(object sender, EventArgs e)
+        {
+            Ban ba = new Ban();
+            ba.Show();
+            ba.a_id = this.a_id;
+        }
+
+        private void renew_Click(object sender, EventArgs e)
+        {
+            Admin_Renew ar = new Admin_Renew();
+            ar.Show();
+            ar.a_id = this.a_id;
+        }
     }
 }

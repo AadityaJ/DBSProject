@@ -79,7 +79,31 @@ namespace InterNetMang
             comm.CommandType = CommandType.Text;
             comm.ExecuteNonQuery();
             conn.Close();
+            MessageBox.Show("Thanks You . Your Renewal request is now undergoing processing.");
             this.Close();
+        }
+
+        private void sr_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            connect1();
+            comm = new OracleCommand();
+            // MessageBox.Show(hate);
+            comm.CommandText = "select * from renew_ where u_id='"+u_id_r+"'";
+            comm.CommandType = CommandType.Text;
+            ds = new DataSet();
+            da = new OracleDataAdapter(comm.CommandText, conn);
+            da.Fill(ds, "renew_");
+            dt = ds.Tables["renew_"];
+            dr = dt.Rows[i];
+            int t = dt.Rows.Count;
+            for (i = 0; i < t; i++)
+            {
+                dr = dt.Rows[i];
+                this.renew_table.Rows.Insert(i, dr["renew_id"].ToString(),dr["admin_id"].ToString(),dr["curr_date"].ToString(), dr["amount"].ToString());
+
+            }
+            conn.Close();
         }
     }
 }

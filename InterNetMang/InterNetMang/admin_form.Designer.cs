@@ -107,6 +107,7 @@
             this.ban_users.TabIndex = 7;
             this.ban_users.Text = "Ban Users";
             this.ban_users.UseVisualStyleBackColor = true;
+            this.ban_users.Click += new System.EventHandler(this.ban_users_Click);
             // 
             // renew
             // 
@@ -116,6 +117,7 @@
             this.renew.TabIndex = 8;
             this.renew.Text = "Renew";
             this.renew.UseVisualStyleBackColor = true;
+            this.renew.Click += new System.EventHandler(this.renew_Click);
             // 
             // session
             // 
@@ -125,6 +127,7 @@
             this.session.TabIndex = 9;
             this.session.Text = "Show Session";
             this.session.UseVisualStyleBackColor = true;
+            this.session.Click += new System.EventHandler(this.session_Click);
             // 
             // admin_form
             // 

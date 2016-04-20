@@ -31,11 +31,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.status = new System.Windows.Forms.TextBox();
             this.Exit = new System.Windows.Forms.Button();
             this.Enter = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.sr = new System.Windows.Forms.Button();
+            this.renew_table = new System.Windows.Forms.DataGridView();
+            this.r_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.a_id_renewal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.curr_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.renew_table)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -68,27 +73,9 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Enter Amount";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(79, 195);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 18);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Status";
-            // 
-            // status
-            // 
-            this.status.Location = new System.Drawing.Point(226, 192);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(100, 20);
-            this.status.TabIndex = 12;
-            this.status.TextChanged += new System.EventHandler(this.status_TextChanged);
-            // 
             // Exit
             // 
-            this.Exit.Location = new System.Drawing.Point(336, 299);
+            this.Exit.Location = new System.Drawing.Point(621, 379);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(75, 23);
             this.Exit.TabIndex = 13;
@@ -98,7 +85,7 @@
             // 
             // Enter
             // 
-            this.Enter.Location = new System.Drawing.Point(184, 299);
+            this.Enter.Location = new System.Drawing.Point(459, 137);
             this.Enter.Name = "Enter";
             this.Enter.Size = new System.Drawing.Size(75, 23);
             this.Enter.TabIndex = 14;
@@ -113,21 +100,69 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 15;
             // 
+            // sr
+            // 
+            this.sr.Location = new System.Drawing.Point(79, 171);
+            this.sr.Name = "sr";
+            this.sr.Size = new System.Drawing.Size(110, 23);
+            this.sr.TabIndex = 16;
+            this.sr.Text = "Show Reciepts";
+            this.sr.UseVisualStyleBackColor = true;
+            this.sr.Click += new System.EventHandler(this.sr_Click);
+            // 
+            // renew_table
+            // 
+            this.renew_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.renew_table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.r_id,
+            this.a_id_renewal,
+            this.curr_date,
+            this.Amount});
+            this.renew_table.Location = new System.Drawing.Point(79, 214);
+            this.renew_table.Name = "renew_table";
+            this.renew_table.Size = new System.Drawing.Size(455, 150);
+            this.renew_table.TabIndex = 17;
+            // 
+            // r_id
+            // 
+            this.r_id.HeaderText = "Renewal ID";
+            this.r_id.Name = "r_id";
+            this.r_id.ReadOnly = true;
+            // 
+            // a_id_renewal
+            // 
+            this.a_id_renewal.HeaderText = "Admin ID";
+            this.a_id_renewal.Name = "a_id_renewal";
+            this.a_id_renewal.ReadOnly = true;
+            // 
+            // curr_date
+            // 
+            this.curr_date.HeaderText = "Current Date";
+            this.curr_date.Name = "curr_date";
+            this.curr_date.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "amt";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            // 
             // Renew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 414);
+            this.Controls.Add(this.renew_table);
+            this.Controls.Add(this.sr);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Enter);
             this.Controls.Add(this.Exit);
-            this.Controls.Add(this.status);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Renew";
             this.Text = "Renew";
+            ((System.ComponentModel.ISupportInitialize)(this.renew_table)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,10 +173,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox status;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Button Enter;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button sr;
+        private System.Windows.Forms.DataGridView renew_table;
+        private System.Windows.Forms.DataGridViewTextBoxColumn r_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn a_id_renewal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn curr_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
     }
 }
