@@ -173,7 +173,7 @@
             // 
             this.prev.Location = new System.Drawing.Point(328, 30);
             this.prev.Name = "prev";
-            this.prev.Size = new System.Drawing.Size(75, 23);
+            this.prev.Size = new System.Drawing.Size(104, 23);
             this.prev.TabIndex = 15;
             this.prev.Text = "Show Previous";
             this.prev.UseVisualStyleBackColor = true;

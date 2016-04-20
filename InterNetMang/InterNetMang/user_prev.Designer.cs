@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
             this.emp_tab = new System.Windows.Forms.DataGridView();
+            this.start = new System.Windows.Forms.Button();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Logout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_us = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.start = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.emp_tab)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +71,16 @@
             this.emp_tab.TabIndex = 2;
             this.emp_tab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.emp_tab_CellContentClick);
             // 
+            // start
+            // 
+            this.start.Location = new System.Drawing.Point(346, 26);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(75, 23);
+            this.start.TabIndex = 3;
+            this.start.Text = "Start";
+            this.start.UseVisualStyleBackColor = true;
+            this.start.Click += new System.EventHandler(this.start_Click);
+            // 
             // Login
             // 
             this.Login.Frozen = true;
@@ -88,19 +98,9 @@
             // Data_us
             // 
             this.Data_us.Frozen = true;
-            this.Data_us.HeaderText = "Data Used";
+            this.Data_us.HeaderText = "Data Used (in Mb.)";
             this.Data_us.Name = "Data_us";
             this.Data_us.ReadOnly = true;
-            // 
-            // start
-            // 
-            this.start.Location = new System.Drawing.Point(346, 26);
-            this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(75, 23);
-            this.start.TabIndex = 3;
-            this.start.Text = "Start";
-            this.start.UseVisualStyleBackColor = true;
-            this.start.Click += new System.EventHandler(this.start_Click);
             // 
             // user_prev
             // 
@@ -125,9 +125,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.DataGridView emp_tab;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Logout;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_us;
         private System.Windows.Forms.Button start;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_us;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Logout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
     }
 }

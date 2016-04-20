@@ -49,6 +49,10 @@ namespace InterNetMang
             else
             {
                 // new form
+                admin_form af = new admin_form();
+                af.Show();
+                af.a_id = this.admin_id.Text;
+
             }
         }
 
