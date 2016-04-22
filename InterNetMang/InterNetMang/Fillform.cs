@@ -46,8 +46,8 @@ namespace InterNetMang
             da.Fill(ds, "user_");
             dt = ds.Tables["user_"];
             dr = dt.Rows[0];
-            int id = Int32.Parse(dr["max(id)"].ToString());
-            id++;
+            int id = int.Parse(dr["max(id)"].ToString());
+            id+=1;
             comm.Connection = conn;
             comm.CommandText = "insert into last_ values('" + id.ToString() + "','user_')";
             comm.CommandType = CommandType.Text;
@@ -66,6 +66,7 @@ namespace InterNetMang
              comm.ExecuteNonQuery();
             conn.Close();
             MessageBox.Show("User created  with user id :" + id.ToString());
+            this.Close();
         }
 
         private void label4_Click(object sender, EventArgs e)

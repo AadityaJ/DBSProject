@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
+using System.IO;
 
 namespace InterNetMang
 {
@@ -20,6 +21,7 @@ namespace InterNetMang
         DataSet ds;
         DataTable dt;
         DataRow dr;
+        DateTime dtm2;
         public Form1()
         {
             InitializeComponent();
@@ -52,7 +54,15 @@ namespace InterNetMang
                 admin_form af = new admin_form();
                 af.Show();
                 af.a_id = this.admin_id.Text;
-
+                connect1();
+                dtm2 = DateTime.Now;
+                OracleCommand c = new OracleCommand("logger", conn);
+                c.CommandText = "logger";
+                c.Parameters.Add("admin_id", OracleDbType.Varchar2, admin_id.Text, ParameterDirection.Input);
+                c.Parameters.Add("date", OracleDbType.Varchar2, dtm2.ToString(), ParameterDirection.Input);
+                //execute logger(txt,dtm2
+                c.CommandType = CommandType.StoredProcedure;
+                c.ExecuteNonQuery();
             }
         }
 
@@ -86,6 +96,37 @@ namespace InterNetMang
             Fillform f = new Fillform();
 //            this.SetVisibleCore(false);
             f.Show();
+        }
+
+        private void prt_Click(object sender, EventArgs e)
+        {
+            connect1();
+            comm = new OracleCommand();
+            comm.CommandText = "select * from admin_log_";
+            comm.CommandType = CommandType.Text;
+            ds = new DataSet();
+            da = new OracleDataAdapter(comm.CommandText, conn);
+            da.Fill(ds, "admin_log_");
+            dt = ds.Tables["admin_log_"];
+            int t = dt.Rows.Count;
+            int i = 0;
+            dr = dt.Rows[i];
+            var csv = new StringBuilder();
+            String filePath = @"C:\Users\aaditya\Desktop\DBSProject\logs\logs.csv";
+            while (i != t)
+            {
+                dr = dt.Rows[i];
+                var first = dr["admin_id"].ToString();
+                var second = dr["dt"].ToString();
+                var newLine = string.Format("{0},{1}", first, second);
+                csv.AppendLine(newLine);
+
+
+                i++;
+            }
+            File.WriteAllText(filePath, csv.ToString());
+            conn.Close();
+            Application.Exit();
         }
     }
 }

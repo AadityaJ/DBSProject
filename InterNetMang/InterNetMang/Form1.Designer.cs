@@ -44,6 +44,7 @@
             this.user_login = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.prt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -180,12 +181,23 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Not An existing user ?";
             // 
+            // prt
+            // 
+            this.prt.Location = new System.Drawing.Point(12, 420);
+            this.prt.Name = "prt";
+            this.prt.Size = new System.Drawing.Size(75, 26);
+            this.prt.TabIndex = 17;
+            this.prt.Text = "Print Report";
+            this.prt.UseVisualStyleBackColor = true;
+            this.prt.Click += new System.EventHandler(this.prt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(721, 455);
+            this.Controls.Add(this.prt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.user_login);
@@ -226,6 +238,7 @@
         private System.Windows.Forms.Button user_login;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button prt;
     }
 }
 
