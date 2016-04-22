@@ -128,5 +128,15 @@ namespace InterNetMang
             conn.Close();
             Application.Exit();
         }
+
+        private void user_pass_TextChanged(object sender, EventArgs e)
+        {
+            user_pass.PasswordChar = '*';
+        }
+
+        private void admin_pass_TextChanged(object sender, EventArgs e)
+        {
+            admin_pass.PasswordChar = '*';
+        }
     }
 }

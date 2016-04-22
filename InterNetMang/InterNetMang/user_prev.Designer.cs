@@ -31,10 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.TextBox();
             this.emp_tab = new System.Windows.Forms.DataGridView();
-            this.start = new System.Windows.Forms.Button();
             this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Logout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_us = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.emp_tab)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(66, 32);
+            this.label1.Location = new System.Drawing.Point(66, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(22, 18);
             this.label1.TabIndex = 0;
@@ -50,7 +51,7 @@
             // 
             // id
             // 
-            this.id.Location = new System.Drawing.Point(196, 29);
+            this.id.Location = new System.Drawing.Point(204, 60);
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(100, 20);
             this.id.TabIndex = 1;
@@ -64,22 +65,12 @@
             this.Login,
             this.Logout,
             this.Data_us});
-            this.emp_tab.Location = new System.Drawing.Point(165, 122);
+            this.emp_tab.Location = new System.Drawing.Point(157, 158);
             this.emp_tab.Name = "emp_tab";
             this.emp_tab.ReadOnly = true;
             this.emp_tab.Size = new System.Drawing.Size(344, 150);
             this.emp_tab.TabIndex = 2;
             this.emp_tab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.emp_tab_CellContentClick);
-            // 
-            // start
-            // 
-            this.start.Location = new System.Drawing.Point(346, 26);
-            this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(75, 23);
-            this.start.TabIndex = 3;
-            this.start.Text = "Start";
-            this.start.UseVisualStyleBackColor = true;
-            this.start.Click += new System.EventHandler(this.start_Click);
             // 
             // Login
             // 
@@ -102,11 +93,33 @@
             this.Data_us.Name = "Data_us";
             this.Data_us.ReadOnly = true;
             // 
+            // start
+            // 
+            this.start.Location = new System.Drawing.Point(345, 54);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(75, 23);
+            this.start.TabIndex = 3;
+            this.start.Text = "Start";
+            this.start.UseVisualStyleBackColor = true;
+            this.start.Click += new System.EventHandler(this.start_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lucida Console", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(227, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 32);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "L-ION";
+            // 
             // user_prev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 381);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.start);
             this.Controls.Add(this.emp_tab);
             this.Controls.Add(this.id);
@@ -129,5 +142,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_us;
         private System.Windows.Forms.DataGridViewTextBoxColumn Logout;
         private System.Windows.Forms.DataGridViewTextBoxColumn Login;
+        private System.Windows.Forms.Label label2;
     }
 }
