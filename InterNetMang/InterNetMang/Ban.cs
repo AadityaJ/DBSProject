@@ -42,12 +42,32 @@ namespace InterNetMang
             connect1();
             comm = new OracleCommand();
             comm.Connection = conn;
-            comm.CommandText = "insert into banned_ values('" +this.u_id.Text+ "','" +this.to.Text+ "','" + this.from.Text + "','" + this.a_id+ "')" ;
+            comm.CommandText = "insert into banned_ values('" +this.u_id.Text+ "','" +this.a_id+ "')" ;
             comm.CommandType = CommandType.Text;
             
             comm.ExecuteNonQuery();
             conn.Close();
-            MessageBox.Show("User Banned from "+this.from.Text+" to "+this.to.Text);
+            MessageBox.Show("User Banned from ");
+        }
+
+       
+
+        private void tab_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void unb_Click(object sender, EventArgs e)
+        {
+            connect1();
+            comm = new OracleCommand();
+            comm.Connection = conn;
+            comm.CommandText = "delete from banned_ where u_id='"+u_id+"'";
+            comm.CommandType = CommandType.Text;
+
+            comm.ExecuteNonQuery();
+            MessageBox.Show("Dona");
+            conn.Close();
         }
     }
 }

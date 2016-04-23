@@ -85,9 +85,25 @@ namespace InterNetMang
             else
             {
                 // new form
-                Loggedin lg = new Loggedin();
-                lg.Show();
-                lg.u_id=user_id.Text;
+                connect1();
+                comm = new OracleCommand();
+                comm.CommandText = "select * from banned_ where u_id='" + user_id.Text + "'";
+                comm.CommandType = CommandType.Text;
+                //textBox1.Text= "select * from user_ where u_id='" + user_id.Text + "' and password='" + user_pass.Text + "' and u_id not in (select u_id from banned_)";
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "banned_");
+                dt = ds.Tables["banned_"];
+                int j = dt.Rows.Count;
+                if (j != 0)
+                {
+                    MessageBox.Show("User ID is Banned.Please Contact Admin");
+                }
+                else {
+                    Loggedin lg = new Loggedin();
+                    lg.Show();
+                    lg.u_id = user_id.Text;
+                }
             }
         }
 
