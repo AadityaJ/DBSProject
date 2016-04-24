@@ -47,6 +47,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.prt = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.User = new System.Windows.Forms.Button();
+            this.Admin = new System.Windows.Forms.Button();
+            this.abtus = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +103,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(406, 218);
+            this.label5.Location = new System.Drawing.Point(406, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 19);
             this.label5.TabIndex = 7;
@@ -124,24 +128,26 @@
             // 
             // admin_pass
             // 
+            this.admin_pass.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_pass.Location = new System.Drawing.Point(142, 257);
             this.admin_pass.Name = "admin_pass";
-            this.admin_pass.Size = new System.Drawing.Size(132, 26);
+            this.admin_pass.Size = new System.Drawing.Size(132, 21);
             this.admin_pass.TabIndex = 10;
             this.admin_pass.TextChanged += new System.EventHandler(this.admin_pass_TextChanged);
             // 
             // user_id
             // 
-            this.user_id.Location = new System.Drawing.Point(532, 211);
+            this.user_id.Location = new System.Drawing.Point(532, 218);
             this.user_id.Name = "user_id";
             this.user_id.Size = new System.Drawing.Size(116, 26);
             this.user_id.TabIndex = 11;
             // 
             // user_pass
             // 
-            this.user_pass.Location = new System.Drawing.Point(532, 253);
+            this.user_pass.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_pass.Location = new System.Drawing.Point(532, 256);
             this.user_pass.Name = "user_pass";
-            this.user_pass.Size = new System.Drawing.Size(116, 26);
+            this.user_pass.Size = new System.Drawing.Size(116, 21);
             this.user_pass.TabIndex = 12;
             this.user_pass.TextChanged += new System.EventHandler(this.user_pass_TextChanged);
             // 
@@ -205,12 +211,62 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // User
+            // 
+            this.User.BackColor = System.Drawing.Color.Gold;
+            this.User.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.User.Location = new System.Drawing.Point(383, 211);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(265, 131);
+            this.User.TabIndex = 19;
+            this.User.Text = "User";
+            this.User.UseVisualStyleBackColor = false;
+            this.User.MouseClick += new System.Windows.Forms.MouseEventHandler(this.User_MouseClick);
+            this.User.MouseLeave += new System.EventHandler(this.User_MouseLeave);
+            // 
+            // Admin
+            // 
+            this.Admin.BackColor = System.Drawing.Color.Gold;
+            this.Admin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Admin.Location = new System.Drawing.Point(38, 211);
+            this.Admin.Name = "Admin";
+            this.Admin.Size = new System.Drawing.Size(302, 131);
+            this.Admin.TabIndex = 20;
+            this.Admin.Text = "Admin";
+            this.Admin.UseVisualStyleBackColor = false;
+            this.Admin.Click += new System.EventHandler(this.Admin_Click);
+            this.Admin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Admin_MouseClick);
+            // 
+            // abtus
+            // 
+            this.abtus.Location = new System.Drawing.Point(597, 459);
+            this.abtus.Name = "abtus";
+            this.abtus.Size = new System.Drawing.Size(95, 23);
+            this.abtus.TabIndex = 21;
+            this.abtus.Text = "About US";
+            this.abtus.UseVisualStyleBackColor = true;
+            this.abtus.Click += new System.EventHandler(this.abtus_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.ForestGreen;
+            this.button2.Location = new System.Drawing.Point(12, 391);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 91);
+            this.button2.TabIndex = 24;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.ForestGreen;
             this.ClientSize = new System.Drawing.Size(721, 489);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.abtus);
+            this.Controls.Add(this.Admin);
+            this.Controls.Add(this.User);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.prt);
             this.Controls.Add(this.label7);
@@ -256,6 +312,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button prt;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button User;
+        private System.Windows.Forms.Button Admin;
+        private System.Windows.Forms.Button abtus;
+        private System.Windows.Forms.Button button2;
     }
 }
 

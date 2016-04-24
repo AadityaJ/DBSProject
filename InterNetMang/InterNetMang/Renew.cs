@@ -70,17 +70,23 @@ namespace InterNetMang
         }
         private void Enter_Click(object sender, EventArgs e)
         {
-            int id = get_inter_id();
-            connect1();
-            comm = new OracleCommand();
-            comm.Connection = conn;
-            int amt = int.Parse(textBox1.Text);
-            comm.CommandText = "insert into interleaved_ values ('" + id + "','" + u_id_r + "'," +amt+")";
-            comm.CommandType = CommandType.Text;
-            comm.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show("Thanks You . Your Renewal request is now undergoing processing.");
-            this.Close();
+            if (textBox1.Text.Equals(""))
+            {
+                MessageBox.Show("error! try again");
+            }
+            else {
+                int id = get_inter_id();
+                connect1();
+                comm = new OracleCommand();
+                comm.Connection = conn;
+                int amt = int.Parse(textBox1.Text);
+                comm.CommandText = "insert into interleaved_ values ('" + id + "','" + u_id_r + "'," + amt + ")";
+                comm.CommandType = CommandType.Text;
+                comm.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Thanks You . Your Renewal request is now undergoing processing.");
+                this.Close();
+            }
         }
 
         private void sr_Click(object sender, EventArgs e)
@@ -100,7 +106,7 @@ namespace InterNetMang
             for (i = 0; i < t; i++)
             {
                 dr = dt.Rows[i];
-                this.renew_table.Rows.Insert(i, dr["renew_id"].ToString(),dr["admin_id"].ToString(),dr["curr_date"].ToString(), dr["amount"].ToString());
+                this.renew_table.Rows.Insert(i, dr["renew_id"].ToString(),dr["admin_id"].ToString(), dr["amount"].ToString());
 
             }
             conn.Close();

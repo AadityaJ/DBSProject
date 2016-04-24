@@ -7,7 +7,7 @@ create table admin_(name varchar(15),admin_id varchar(15) not null,password varc
 create table user_session_ (session_id varchar2(15) not null,u_id varchar(15),login varchar2(18),
 	logout varchar2(18),data_used int,primary key(session_id),foreign key(u_id) references user_(u_id));
 /* user session created */
-create table banned_ (u_id varchar(15),date_from date,date_to date,admin_id varchar(15),foreign key(u_id) references user_(u_id),
+create table banned_ (u_id varchar(15),admin_id varchar(15),foreign key(u_id) references user_(u_id),
 	foreign key(admin_id) references admin_(admin_id));
 /* banned created*/
 create table renew_ (renew_id varchar(15),u_id varchar(15),admin_id varchar(15),curr_date date,amount int,

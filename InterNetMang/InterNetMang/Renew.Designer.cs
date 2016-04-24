@@ -38,7 +38,6 @@
             this.renew_table = new System.Windows.Forms.DataGridView();
             this.r_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.a_id_renewal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.curr_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.renew_table)).BeginInit();
             this.SuspendLayout();
@@ -116,11 +115,10 @@
             this.renew_table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.r_id,
             this.a_id_renewal,
-            this.curr_date,
             this.Amount});
             this.renew_table.Location = new System.Drawing.Point(79, 214);
             this.renew_table.Name = "renew_table";
-            this.renew_table.Size = new System.Drawing.Size(455, 150);
+            this.renew_table.Size = new System.Drawing.Size(344, 150);
             this.renew_table.TabIndex = 17;
             // 
             // r_id
@@ -134,12 +132,6 @@
             this.a_id_renewal.HeaderText = "Admin ID";
             this.a_id_renewal.Name = "a_id_renewal";
             this.a_id_renewal.ReadOnly = true;
-            // 
-            // curr_date
-            // 
-            this.curr_date.HeaderText = "Current Date";
-            this.curr_date.Name = "curr_date";
-            this.curr_date.ReadOnly = true;
             // 
             // Amount
             // 
@@ -178,9 +170,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button sr;
         private System.Windows.Forms.DataGridView renew_table;
-        private System.Windows.Forms.DataGridViewTextBoxColumn r_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn a_id_renewal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn curr_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn a_id_renewal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn r_id;
     }
 }

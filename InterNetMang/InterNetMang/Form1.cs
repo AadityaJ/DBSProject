@@ -70,7 +70,8 @@ namespace InterNetMang
         {
             connect1();
             comm = new OracleCommand();
-            comm.CommandText = "select * from user_ where u_id='" + user_id.Text + "' and password='" + user_pass.Text + "'";// and u_id not in (select u_id from banned_)";
+            String u_id = user_id.Text;
+            comm.CommandText = "select * from user_ where u_id='" + u_id + "' and password='" + user_pass.Text + "'";// and u_id not in (select u_id from banned_)";
             comm.CommandType = CommandType.Text;
             //textBox1.Text= "select * from user_ where u_id='" + user_id.Text + "' and password='" + user_pass.Text + "' and u_id not in (select u_id from banned_)";
             ds = new DataSet();
@@ -85,26 +86,35 @@ namespace InterNetMang
             else
             {
                 // new form
-                connect1();
-                comm = new OracleCommand();
-                comm.CommandText = "select * from banned_ where u_id='" + user_id.Text + "'";
-                comm.CommandType = CommandType.Text;
-                //textBox1.Text= "select * from user_ where u_id='" + user_id.Text + "' and password='" + user_pass.Text + "' and u_id not in (select u_id from banned_)";
-                ds = new DataSet();
-                da = new OracleDataAdapter(comm.CommandText, conn);
-                da.Fill(ds, "banned_");
-                dt = ds.Tables["banned_"];
-                int j = dt.Rows.Count;
-                if (j != 0)
-                {
-                    MessageBox.Show("User ID is Banned.Please Contact Admin");
-                }
-                else {
+                //connect1();
+                //check again
+                bool res = checktwice(u_id);
+                if (res)
+                { 
                     Loggedin lg = new Loggedin();
                     lg.Show();
                     lg.u_id = user_id.Text;
+                    
+                }
+                else {
+                    MessageBox.Show("User ID is Banned.Please Contact Admin");
                 }
             }
+        }
+        private Boolean checktwice(String u_id)
+        {
+            OracleCommand com = new OracleCommand();
+            com.CommandText = "select * from banned_ where u_id='" + u_id + "'";
+            com.CommandType = CommandType.Text;
+            //  textBox1.Text=(com).ToString();
+            DataSet ds_1 = new DataSet();
+            OracleDataAdapter da_1 = new OracleDataAdapter(com.CommandText, conn);
+            da_1.Fill(ds_1, "banned_");
+            DataTable dt_1;
+            dt_1 = ds_1.Tables["banned_"];
+            int j = dt_1.Rows.Count;
+            if (j == 0) return true;
+            else return false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -153,6 +163,39 @@ namespace InterNetMang
         private void admin_pass_TextChanged(object sender, EventArgs e)
         {
             admin_pass.PasswordChar = '*';
+        }
+
+
+
+        private void User_MouseClick(object sender, MouseEventArgs e)
+        {
+            User.Visible = false;
+        }
+
+        private void User_MouseLeave(object sender, EventArgs e)
+        {
+            User.Visible = false;
+        }
+
+        private void Admin_MouseClick(object sender, MouseEventArgs e)
+        {
+            Admin.Visible = false;
+        }
+
+        private void Admin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void abtus_Click(object sender, EventArgs e)
+        {
+            about ab = new about();
+            ab.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.Visible=(false);
         }
     }
 }

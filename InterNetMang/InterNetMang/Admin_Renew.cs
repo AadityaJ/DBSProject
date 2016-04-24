@@ -61,32 +61,38 @@ namespace InterNetMang
 
         private void rnw_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            connect1();
-            comm = new OracleCommand();
-            // MessageBox.Show(hate);
-            comm.CommandText = "select * from interleaved_ where renew_id='"+this.r_id.Text+"'";
-            comm.CommandType = CommandType.Text;
-            ds = new DataSet();
-            da = new OracleDataAdapter(comm.CommandText, conn);
-            da.Fill(ds, "interleaved_");
-            dt = ds.Tables["interleaved_"];
-            dr = dt.Rows[i];
-            int t = dt.Rows.Count;
-            if (t == 0)
+            if (r_id.Text.Equals(""))
             {
-                MessageBox.Show("Error in ID");
+                MessageBox.Show("Error in id.Try Again");
             }
-            else
-            {
+            else {
+                int i = 0;
+                connect1();
                 comm = new OracleCommand();
-                comm.Connection = conn;
-                comm.CommandText = "insert into renew_ values('" + this.r_id.Text + "','" + dr["u_id"].ToString()+ "','" + this.a_id + "','" + date.Text+"',"+dr["amount"]+ ")";
+                // MessageBox.Show(hate);
+                comm.CommandText = "select * from interleaved_ where renew_id='" + this.r_id.Text + "'";
                 comm.CommandType = CommandType.Text;
+                ds = new DataSet();
+                da = new OracleDataAdapter(comm.CommandText, conn);
+                da.Fill(ds, "interleaved_");
+                dt = ds.Tables["interleaved_"];
+                dr = dt.Rows[i];
+                int t = dt.Rows.Count;
+                if (t == 0)
+                {
+                    MessageBox.Show("Error in ID");
+                }
+                else
+                {
+                    comm = new OracleCommand();
+                    comm.Connection = conn;
+                    comm.CommandText = "insert into renew_ values('" + this.r_id.Text + "','" + dr["u_id"].ToString() + "','" + this.a_id + "'," + dr["amount"] + ")";
+                    comm.CommandType = CommandType.Text;
 
-                comm.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Done");
+                    comm.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Done");
+                }
             }
         }
     }

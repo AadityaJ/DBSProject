@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.r_id = new System.Windows.Forms.TextBox();
             this.rnw = new System.Windows.Forms.Button();
-            this.date = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.interleaved)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,19 +107,11 @@
             this.rnw.UseVisualStyleBackColor = true;
             this.rnw.Click += new System.EventHandler(this.rnw_Click);
             // 
-            // date
-            // 
-            this.date.Location = new System.Drawing.Point(203, 320);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(100, 20);
-            this.date.TabIndex = 4;
-            // 
             // Admin_Renew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 364);
-            this.Controls.Add(this.date);
             this.Controls.Add(this.rnw);
             this.Controls.Add(this.r_id);
             this.Controls.Add(this.label1);
@@ -145,6 +136,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox r_id;
         private System.Windows.Forms.Button rnw;
-        private System.Windows.Forms.TextBox date;
     }
 }

@@ -57,16 +57,23 @@ namespace InterNetMang
         }
         private void Done_Click(object sender, EventArgs e)
         {
-            int id = id_val();
-            connect1();
-            comm = new OracleCommand();
-            comm.Connection = conn;
-             comm.CommandText = "insert into user_ values ('" + nm.Text + "','" + id + "','" + this.ph_no.Text + "','" + this.address.Text + "','" +textBox2.Text.ToString() + "','"+age.Text+"','" + this.pass.Text + "')";
-             comm.CommandType = CommandType.Text;
-             comm.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show("User created  with user id :" + id.ToString());
-            this.Close();
+            if (this.nm.Text.Equals(""))
+            {
+                MessageBox.Show("Input Not Proper");
+                this.Close();
+            }
+            else {
+                int id = id_val();
+                connect1();
+                comm = new OracleCommand();
+                comm.Connection = conn;
+                comm.CommandText = "insert into user_ values ('" + nm.Text + "','" + id + "','" + this.ph_no.Text + "','" + this.address.Text + "','" + textBox2.Text.ToString() + "','" + age.Text + "','" + this.pass.Text + "')";
+                comm.CommandType = CommandType.Text;
+                comm.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("User created  with user id :" + id.ToString());
+                this.Close();
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
